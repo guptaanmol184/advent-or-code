@@ -1,10 +1,17 @@
+# Advent of code Year 2021 Day 01 solution
+# Author = Anmol Gupta
+# Date = December 2021
 
-entries = []
-with open ('input.txt', 'r') as depths:
-    entries = [int(line) for line in depths.readlines()]
+input = list()
+with open("input.txt", 'r') as input_file:
+    input = input_file.readlines()
 
-# Answer 1
-print(sum( a < b for a, b in zip(entries, entries[1:])))
+input = [int(num) for num in input]
 
-# Answer 2
-print(sum( a < b for a, b in zip(entries, entries[3:])))
+# 1
+ans1 = sum(a < b for a, b in zip(input, input[1:]))
+print("Part One : " + str(ans1))
+
+# 2
+ans2 = sum(a < b for a, b in zip(input, input[3:]))
+print("Part Two : " + str(ans2))

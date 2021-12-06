@@ -1,9 +1,9 @@
-# Advent of code Year 2021 Day XX solution
+# Advent of code Year 2021 Day 02 solution
 # Author = Anmol Gupta
 # Date = December 2021
 
 input = list()
-with open("input.txt", 'r') as input_file:
+with open("input.txt", "r") as input_file:
     input = input_file.readlines()
 
 
@@ -19,11 +19,11 @@ horizontal_position = 0
 depth = 0
 
 for action, magnitude in input_commands:
-    if action == 'forward':
+    if action == "forward":
         horizontal_position += magnitude
-    elif action == 'up':
+    elif action == "up":
         depth -= magnitude
-    elif action == 'down':
+    elif action == "down":
         depth += magnitude
 
 print("Part One : " + str(horizontal_position * depth))
@@ -34,12 +34,12 @@ depth = 0
 aim = 0
 
 for action, magnitude in input_commands:
-    if action == 'forward':
+    if action == "forward":
         horizontal_position += magnitude
         depth += aim * magnitude
-    elif action == 'up':
+    elif action == "up":
         aim -= magnitude
-    elif action == 'down':
+    elif action == "down":
         aim += magnitude
 
 print("Part Two : " + str(horizontal_position * depth))

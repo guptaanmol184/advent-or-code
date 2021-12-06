@@ -1,4 +1,4 @@
-# Advent of code Year 2021 Day XX solution
+# Advent of code Year 2021 Day 06 solution
 # Author = Anmol Gupta
 # Date = December 2021
 

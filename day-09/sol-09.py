@@ -32,6 +32,52 @@ for i, j in lowest_points:
 print("Part One : " + str(risk_level_sum))
 
 # 2
-# Multiply sizes of 3 largest basins
 
-print("Part Two : " + str(None))
+
+def basin_fill(x, y, heightmap, visited):
+
+    # if value x, y not inside
+    # The basin is invalid
+    if x < 0 or x >= x_size:
+        return 0
+    if y < 0 or y >= y_size:
+        return 0
+
+    # if visited x, y return
+    # The point is already visited
+    if visited[x][y] == True:
+        return 0
+
+    # Mark the point for basin caculation as visited
+    visited[x][y] = True
+
+    # if value x, y is 9
+    # 9 cannot be counted as a part of the basin
+    if heightmap[x][y] == 9:
+        return 0
+
+    return (
+        1  # current point
+        + basin_fill(x + 1, y, heightmap, visited)
+        + basin_fill(x - 1, y, heightmap, visited)
+        + basin_fill(x, y - 1, heightmap, visited)
+        + basin_fill(x, y + 1, heightmap, visited)
+    )
+
+
+basin_sizes = []
+
+
+# Multiply sizes of 3 largest basins
+for x, y in lowest_points:
+    # use flood fill to identify the basins
+    # mark x, y visited
+    visited = [[False for _ in range(y_size)] for _ in range(x_size)]
+    basin_size = basin_fill(x, y, heightmap, visited)
+    basin_sizes.append(basin_size)
+
+
+basin_sizes.sort(reverse=True)
+ans2 = basin_sizes[0] * basin_sizes[1] * basin_sizes[2]
+
+print("Part Two : " + str(ans2))

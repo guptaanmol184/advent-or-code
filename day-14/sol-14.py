@@ -12,29 +12,32 @@ template = list(input[0].strip())
 insertion_rules = {}
 for line in input[2:]:
     lhs, rhs = line.strip().split(" -> ")
-    insertion_rules[lhs] = rhs
+    insertion_rules[(lhs[0], lhs[1])] = rhs
 
-c = Counter(template)
 
-for i in range(10):
-    num_inserts = 0
-    new_template = template[:]
-    for i in range(len(template) - 1):
-        window = template[i : i + 2]
+letter_counter = Counter(template)
+
+polymer_counter = Counter()
+for i in range(len(template) - 1):
+    key = (template[i], template[i + 1])
+    polymer_counter[key] += 1
+
+for i in range(40):
+    udpated_polymer_counter = Counter()
+    for key, val in polymer_counter.items():
         try:
-            to_insert = insertion_rules["".join(window)]
-            new_template = (
-                new_template[: i + 1 + num_inserts]
-                + [to_insert]
-                + new_template[i + 1 + num_inserts :]
-            )
-            num_inserts += 1
-            c[to_insert] += 1
-        except KeyError:
-            continue
-    template = new_template
+            c = insertion_rules[key]
+            udpated_polymer_counter[(key[0], c)] += val
+            udpated_polymer_counter[(c, key[1])] += val
+            letter_counter[c] += val
+        except:
+            udpated_polymer_counter[key] += val
+    polymer_counter = udpated_polymer_counter
+    if i == 9:
+        ans1 = max(letter_counter.values()) - min(letter_counter.values())
+    if i == 39:
+        ans2 = max(letter_counter.values()) - min(letter_counter.values())
 
-ans1 = max(c.values()) - min(c.values())
 
 # 1
 """
@@ -46,4 +49,4 @@ print("Part One : " + str(ans1))
 """
 Solution to Part 2
 """
-print("Part Two : " + str(None))
+print("Part Two : " + str(ans2))

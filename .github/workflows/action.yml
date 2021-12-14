@@ -11,7 +11,6 @@ jobs:
     name: Update Advent of Code starts to README
     runs-on: ubuntu-latest
     steps:
-      - name: advent-readme-stars
       - uses: actions/checkout@v2
       # You may pin to the exact commit or the version.
       # uses: k2bd/advent-readme-stars@7836395f6bdc8d97d1ccf73e88b218b7a0fcf9f5

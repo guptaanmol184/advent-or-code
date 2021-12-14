@@ -1,3 +1,7 @@
+# AOC-2021
+
+My solutions to [Advent of Code](https://adventofcode.com/) puzzles using `python`.
+
 <!--- advent_readme_stars table --->
 ## 2021 Results
 

@@ -21,4 +21,5 @@ My solutions to [Advent of Code](https://adventofcode.com/) puzzles using `pytho
 | [Day 12](https://adventofcode.com/2021/day/12) | ⭐ | ⭐ |
 | [Day 13](https://adventofcode.com/2021/day/13) | ⭐ | ⭐ |
 | [Day 14](https://adventofcode.com/2021/day/14) | ⭐ | ⭐ |
+| [Day 16](https://adventofcode.com/2021/day/16) | ⭐ | ⭐ |
 <!--- advent_readme_stars table --->

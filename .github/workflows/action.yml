@@ -21,7 +21,7 @@ jobs:
           # AoC session cookie - make sure to keep this in a repo secret! See the README for instructions on getting this.
           sessionCookie: ${{ secrets.AOC_SESSION }}
           # AoC leaderboard ID. See the README for instructions on getting this.
-          leaderboardId: 425502 # optional 
+          # leaderboardId:  # optional 
           # Unique text marking where the stars board section should go. Should be a comment, i.e. <!--- text enclosed in these markers --->, which is not used elsewhere in the README, and which should appear alone on its own line.
           # tableMarker: # optional, default is <!--- advent_readme_stars table --->
           # Symbol to use in the stars table

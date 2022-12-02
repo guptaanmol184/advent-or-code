@@ -1,6 +1,6 @@
-# Advent of code Year 2021 Day XX solution
+# Advent of code Year 2022 Day XX solution
 # Author = Anmol Gupta
-# Date = December 2021
+# Date = December 2022
 
 input = list()
 with open("input.txt", 'r') as input_file:

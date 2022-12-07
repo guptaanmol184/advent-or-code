@@ -7,4 +7,9 @@
         "--strict"
     ],
     "python.linting.enabled": true,
+    "python.formatting.provider": "black",
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+    },
 }
